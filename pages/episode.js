@@ -1,7 +1,7 @@
 import "isomorphic-fetch";
 import Layout from "../components/Layout";
 import EpisodeView from "../components/EpisodeView";
-import Error from "next/error";
+import Error from "../pages/_error";
 
 export default class extends React.Component {
 
@@ -15,7 +15,7 @@ export default class extends React.Component {
             const dataEpisode = await reqEpisode.json();
             const episode = dataEpisode.body.audio_clip;
     
-            if ( res.status >= 400 ) {
+            if ( reqEpisode.status >= 400 ) {
                 res.status = reqEpisode.statusCode;
                 return { statusCode: reqEpisode.status }
             }

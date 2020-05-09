@@ -1,6 +1,6 @@
 import Layout from "../components/Layout";
 import ChannelView from "../components/ChannelView";
-import Error from "next/error";
+import Error from "../pages/_error";
 
 export default class extends React.Component {
 
