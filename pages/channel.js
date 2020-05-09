@@ -1,30 +1,47 @@
-import Link from "next/link";
 import Layout from "../components/Layout";
 import ChannelView from "../components/ChannelView";
+import Error from "next/error";
 
 export default class extends React.Component {
 
-    static async getInitialProps({ query }) {
-        const idChannel = query.id;
+    static async getInitialProps({ query, res }) {
 
-        const [reqChannel, audioClips] = await Promise.all([
-            await fetch (`https://api.audioboom.com/channels/${idChannel}`),
-            await fetch (`https://api.audioboom.com/channels/${idChannel}/audio_clips`),
-        ])
+        try {
+
+            const idChannel = query.id;
+    
+            const [reqChannel, audioClips] = await Promise.all([
+                await fetch (`https://api.audioboom.com/channels/${idChannel}`),
+                await fetch (`https://api.audioboom.com/channels/${idChannel}/audio_clips`),
+            ])
+            
+            const dataChannel = await reqChannel.json();
+            const channel = dataChannel.body.channel;
         
-        const dataChannel = await reqChannel.json();
-        const channel = dataChannel.body.channel;
-    
-        const dataAudio = await audioClips.json();
-        const audioClip = dataAudio.body.audio_clips;
-    
-        return { channel, audioClip };
+            const dataAudio = await audioClips.json();
+            const audioClip = dataAudio.body.audio_clips;
+
+            if ( reqChannel.status >= 400 ) {
+                res.statusCode = reqChannel.status;
+                return { statusCode: reqChannel.status }
+            }
+        
+            return { channel, audioClip, statusCode: 200 };
+
+        } catch(error) {
+
+            return { channel: null, audioClip: null, statusCode: 503 }
+        }
     }
 
 
     render() {
 
-        const { channel, audioClip } = this.props;
+        const { channel, audioClip, statusCode } = this.props;
+
+        if ( statusCode !== 200 ) {
+            return <Error statusCode={statusCode} />
+        }
 
         return <Layout title={ channel.title } >
         
