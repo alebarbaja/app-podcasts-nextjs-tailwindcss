@@ -4,7 +4,7 @@ import slug from "../helpers/slug";
 
 export default class ChannelView extends React.Component {
     render() {
-        const { channel, audioClip } = this.props;
+        const { channel, audioClip, onClickEpisode } = this.props;
 
         return <article>
             <h1 className="text-3xl mb-3">Este podcast se llama <span className="font-bold"> { channel.title } </span></h1>
@@ -21,7 +21,8 @@ export default class ChannelView extends React.Component {
                                     slug: slug(clip.title),
                                     id: clip.id
                                 }}>
-                                    <a className="hover:font-bold">
+                                    <a className="hover:font-bold"
+                                       onClick={ (event) => onClickEpisode(event, clip) }>
                                         {  clip.title }
                                     </a>
                                 </Link>

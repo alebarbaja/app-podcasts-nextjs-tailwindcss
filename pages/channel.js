@@ -1,8 +1,14 @@
 import Layout from "../components/Layout";
 import ChannelView from "../components/ChannelView";
+import PodcastPlayer from "../components/PodcastPlayer";
 import Error from "../pages/_error";
 
 export default class extends React.Component {
+
+    constructor(props) {
+        super(props)
+        this.state = { openEpisode: null }
+    }
 
     static async getInitialProps({ query, res }) {
 
@@ -34,18 +40,38 @@ export default class extends React.Component {
         }
     }
 
+    openEpisode = (event, episode) => {
+        event.preventDefault();
+        this.setState({
+            openEpisode: episode
+        });
+    }
+
+    closeEpisode = (event) => {
+        event.preventDefault();
+        this.setState({
+            openEpisode: null
+        });
+    }
 
     render() {
 
         const { channel, audioClip, statusCode } = this.props;
+        const { openEpisode } = this.state; 
 
         if ( statusCode !== 200 ) {
             return <Error statusCode={statusCode} />
         }
 
         return <Layout title={ channel.title } >
+
+            { openEpisode &&
+                <section className="fixed inset-0 z-50 py-2 px-4 font-bold bg-blue-100" aria-label="Modal de episodio">
+                    <PodcastPlayer clip = { openEpisode } onClose = { this.closeEpisode } />
+                </section>
+            }
         
-            <ChannelView channel = { channel } audioClip = { audioClip } />
+            <ChannelView channel = { channel } audioClip = { audioClip } onClickEpisode = { this.openEpisode } />
 
         </Layout>
     }
