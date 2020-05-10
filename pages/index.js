@@ -33,7 +33,7 @@ export default class extends React.Component {
 
         return <Layout title="Podcasts">
 
-            <ChannelGrid channels={ channels} />            
+            <ChannelGrid channels={ channels} />
 
         </Layout>
 

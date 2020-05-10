@@ -1,4 +1,6 @@
-import Link from "next/link";
+import { Link } from "../routes";
+import slug from "../helpers/slug";
+
 
 export default class ChannelView extends React.Component {
     render() {
@@ -14,7 +16,11 @@ export default class ChannelView extends React.Component {
                     audioClip.map( (clip) => (
                         <ul>
                             <li className="my-2">
-                                <Link href={`/episode?id=${clip.id}`} prefetch>
+                                {/* <Link href={`/episode?id=${clip.id}`}> */}
+                                <Link route='episode' params={{
+                                    slug: slug(clip.title),
+                                    id: clip.id
+                                }}>
                                     <a className="hover:font-bold">
                                         {  clip.title }
                                     </a>

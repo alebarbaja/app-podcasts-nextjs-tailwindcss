@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Link from "next/link";
+import { Link } from "../routes";
 
 export default class Layout extends React.Component {
 
@@ -8,7 +8,7 @@ export default class Layout extends React.Component {
         const { children, title } = this.props;
 
 
-        return <main className="container mx-auto ">
+        return <main className="container mx-auto min-h-full">
 
             <Head>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -17,7 +17,7 @@ export default class Layout extends React.Component {
             </Head>
 
             <header className="p-5 bg-orange-400 text-center mb-3">
-                <h2 className="text-3xl"> <Link href="/" prefetch><a>Podcasts</a></Link></h2>
+                <h2 className="text-3xl"> <Link href="/" ><a>Podcasts</a></Link></h2>
             </header>
 
             { children }

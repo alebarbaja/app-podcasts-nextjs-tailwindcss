@@ -1,5 +1,5 @@
 import Layout from "../components/Layout";
-import Link from "next/link";
+import { Link } from "../routes";
 
 export default class Error extends React.Component {
     
