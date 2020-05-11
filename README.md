@@ -18,7 +18,7 @@ Los estilos visuales están basados en un diseño de [Dribbble](https://dribbble
 
 1. `npm install` instala las dependencias
 2. `npm run dev` ejecuta el entorno de desarrollo
-3. `npm run build && npm start` ejecuta el entorno de producción
+3. `npm run export` ejecuta el entorno de producción
 
 ## Licencia
 
