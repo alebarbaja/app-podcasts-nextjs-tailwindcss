@@ -10,7 +10,7 @@ export default class ChannelGrid extends React.Component {
             <ul className="grid list-podcasts">
             {
                 channels.map((channel) => (
-                    <li className="podcast border-2 border-transparent p-2 transition-all duration-100 ease-in hover:border-current">
+                    <li key={channel.id} className="podcast border-2 border-transparent p-2 transition-all duration-100 ease-in hover:border-current">
                         <Link route='channel' params={{ 
                             slug: slug(channel.title),
                             id: channel.id

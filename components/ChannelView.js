@@ -14,7 +14,7 @@ export default class ChannelView extends React.Component {
                 <ul className="grid gap-2 lg:grid-cols-2 xl:grid-cols-4">
                 {
                     audioClip.map( (clip) => (
-                        <li className="my-2 episode border-2 border-transparent p-1 transition-colors duration-100 ease-in hover:border-current">
+                        <li key={clip.id} className="my-2 episode border-2 border-transparent p-1 transition-colors duration-100 ease-in hover:border-current">
                             <Link route='episode' params={{
                                 slug: slug(clip.title),
                                 id: clip.id
