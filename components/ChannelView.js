@@ -7,16 +7,14 @@ export default class ChannelView extends React.Component {
         const { channel, audioClip, onClickEpisode } = this.props;
 
         return <article className="px-4">
-            <h1 className="text-4xl text-center text-color-main font-bold border-b-2 border-current mt-4">{ channel.title }</h1>
+            <h2 className="text-4xl text-center text-color-main font-bold border-b-2 border-current mt-4">{ channel.title }</h2>
             <p className="block text-lg text-center mt-1 mb-3 py-1 px-2"><span>{ channel.category.title }</span></p>
 
             <section className="mt-12" aria-label="Episode list">
-                {/* <h2 className="text-lg my-2 italic border-b-2 border-current">Last episodes</h2> */}
                 <ul className="grid gap-2 lg:grid-cols-2 xl:grid-cols-4">
                 {
                     audioClip.map( (clip) => (
                         <li className="my-2 episode border-2 border-transparent p-1 transition-colors duration-100 ease-in hover:border-current">
-                            {/* <Link href={`/episode?id=${clip.id}`}> */}
                             <Link route='episode' params={{
                                 slug: slug(clip.title),
                                 id: clip.id

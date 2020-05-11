@@ -27,7 +27,7 @@ export default class Layout extends React.Component {
             </Head>
 
             <header className="p-3 md:p-5 bg-color-main mb-3 sticky top-0 z-50">
-                <h2 className="inline-block py-2 px-4 text-xl md:text-3xl font-bold bg-white text-color-main"> <Link href="/" ><a>Podcasts</a></Link></h2>
+                <h1 className="inline-block text-xl md:text-3xl font-bold bg-white text-color-main transition-colors duration-100 ease-in hover:border hover:border-b-2 hover:border-white"> <Link href="/" ><a className="py-2 px-4">Podcasts</a></Link></h1>
             </header>
 
             <style jsx global>{`
@@ -45,6 +45,11 @@ export default class Layout extends React.Component {
 
                 body {
                     font-family: 'PT Sans', sans-serif;
+                }
+
+                h1:hover {
+                    background-color: var(--main-color);
+                    color: white;
                 }
             `}</style>
 
