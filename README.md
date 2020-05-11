@@ -16,6 +16,12 @@ La visual está basada en un diseño en [Dribbble](https://dribbble.com/shots/37
 
 <img src="./.assets-readme/screenshot-iphone-player.png" alt="Screenshot de Player" width="300">
 
+## PageSpeed
+
+<img src="./.assets-readme/screenshot-pagespeed-mobile.png" alt="Estadísticas de PageSpeed para mobile. Resultado: 94%" width="300">
+
+<img src="./.assets-readme/screenshot-pagespeed-desktop.png" alt="Estadísticas de PageSpeed para desktop. Resultado: 99%" width="300">
+
 ## Pasos para iniciar el proyecto
 
 1. `npm install` instala las dependencias
