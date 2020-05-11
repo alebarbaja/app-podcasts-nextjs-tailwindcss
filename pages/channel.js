@@ -45,6 +45,8 @@ export default class extends React.Component {
         this.setState({
             openEpisode: episode
         });
+        const body = document.querySelector('body');
+        body.style.overflow = 'hidden';
     }
 
     closeEpisode = (event) => {
@@ -52,6 +54,8 @@ export default class extends React.Component {
         this.setState({
             openEpisode: null
         });
+        const body = document.querySelector('body');
+        body.style.overflow = '';
     }
 
     render() {
@@ -66,7 +70,7 @@ export default class extends React.Component {
         return <Layout title={ channel.title } >
 
             { openEpisode &&
-                <section className="fixed inset-0 z-50 py-2 px-4 font-bold bg-blue-100" aria-label="Modal de episodio">
+                <section className="fixed inset-0 w-full h-full overflow-y-auto z-50 font-bold bg-white pb-4" aria-label="Modal de episodio">
                     <PodcastPlayer clip = { openEpisode } onClose = { this.closeEpisode } />
                 </section>
             }

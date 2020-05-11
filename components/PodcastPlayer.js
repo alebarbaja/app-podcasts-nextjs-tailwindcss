@@ -1,35 +1,50 @@
 import Link from "next/link";
+import { loadGetInitialProps } from "next/dist/next-server/lib/utils";
 
 export default class PodcasPlayer extends React.Component {
     render() {
         const { onClose, clip } = this.props;
 
         return (
-            <article>
-                <nav>
-                    {
-                        onClose ?
-                            <Link href="">
-                                <a onClick={ onClose }>&lt; Volver </a>
-                            </Link>
-                        :
-                            <Link href={`/channel?id=${clip.channel.id}`}>
-                                <a>&lt; Volver </a>
-                            </Link>
-                    }
-                </nav>
+            <article className="flex flex-col md:flex-row">
+                <section className="relative hero-player md:w-2/4" aria-label="Hero player">
+                    <nav className="absolute border-2 border-current bg-white py-1 px-2 uppercase hover:text-white hover:bg-black hover:border-transparent transition-colors duration-100 ease-in">
+                        {
+                            onClose ?
+                                <Link href="">
+                                    <a onClick={ onClose }>✕ Close </a>
+                                </Link>
+                            :
+                                <Link href={`/channel?id=${clip.channel.id}`}>
+                                    <a>✕ Close</a>
+                                </Link>
+                        }
+                    </nav>
 
-                <picture>
-                    <img src={`${clip.urls.image || clip.channel.urls.logo_image.original}`} alt="" />
-                </picture>
+                    <picture>
+                        <img className="object-cover w-full h-full" src={`${clip.urls.image || clip.channel.urls.logo_image.original}`} alt="" />
+                    </picture>
+                </section>
 
-                <section aria-label="Información de episodio y controles de reproducción">
-                    <h3>{ clip.title }</h3>
-                    <h6>{ clip.channel.title }</h6>
-                    <audio controls autoPlay={true}>
+                <section className="mt-4 px-4 flex-shrink-0 md:w-2/4" aria-label="Episode info and playback controls">
+                    <time className="text-color-main opacity-50 font-bold" datetime={ clip.recorded_at.toString().slice(0, 10) }>{ clip.recorded_at.toString().slice(0, 10) } / { Math.ceil(clip.duration / 60) } min</time>
+                    <audio className="w-full my-6" controls _autoPlay={true}>
                         <source src={ clip.urls.high_mp3 } type="audio/mpeg" />
                     </audio>
+                    <h3 className="text-3xl font-bold text-color-main mt-6 mb-1">{ clip.title }</h3>
+                    <h6 className="text-lg text-color-main opacity-50 border-t-2 pt-2">{ clip.channel.title }</h6>
                 </section>
+
+                <style jsx>{`
+                    .hero-player nav {
+                        right: 0.75rem;
+                        top: 0.75rem;
+                    }
+
+                    .hero-player picture {
+                        max-height: 75vh;
+                    }
+                `}</style>
 
 
             </article>

@@ -13,15 +13,15 @@ export default class Error extends React.Component {
 
         return (
             <Layout title="❌ Oh-oh">
-                <article className="text-center mt-64">
+                <article className="text-center mt-56">
                     {
                         statusCode === 404 ?
                             <div>
-                                <h1 className="text-4xl mb-16">Esta página no existe</h1>
-                                <p className="text-2xl text-orange-700 hover:text-orange-900"><Link href="/"><a className="underline">Volver a la Home</a></Link></p>
+                                <h1 className="text-3xl mb-16">Esta página no existe</h1>
+                                <p className="text-2xl text-color-main"><Link href="/"><a className="underline">Volver a la Home</a></Link></p>
                             </div>
                         :
-                            <h1 className="text-4xl">Ha habido un error</h1>
+                            <h1 className="text-3xl">Ha habido un error</h1>
                     }
                 </article>
             </Layout>
