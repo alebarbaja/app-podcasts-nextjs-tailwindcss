@@ -25,7 +25,7 @@ export default class ChannelView extends React.Component {
                                         <img className="object-cover h-full w-full" src={clip.urls.image} alt="" />
                                     </picture>
                                     <div>
-                                        <time className="text-color-main opacity-50 font-bold" datetime={ clip.recorded_at.toString().slice(0, 10) }>{ clip.recorded_at.toString().slice(0, 10) } / { Math.ceil(clip.duration / 60) } min</time>
+                                        <time className="text-color-main opacity-50 font-bold" dateTime={ clip.recorded_at.toString().slice(0, 10) }>{ clip.recorded_at.toString().slice(0, 10) } / { Math.ceil(clip.duration / 60) } min</time>
                                         <h2 className="title text-xl mt-1 text-color-main font-bold">{  clip.title }</h2>
                                     </div>
                                 </a>

@@ -27,7 +27,7 @@ export default class PodcasPlayer extends React.Component {
                 </section>
 
                 <section className="mt-4 px-4 md:p-8 flex-shrink-0 md:w-2/4" aria-label="Episode info and playback controls">
-                    <time className="text-color-main opacity-50 font-bold" datetime={ clip.recorded_at.toString().slice(0, 10) }>{ clip.recorded_at.toString().slice(0, 10) } / { Math.ceil(clip.duration / 60) } min</time>
+                    <time className="text-color-main opacity-50 font-bold" dateTime={ clip.recorded_at.toString().slice(0, 10) }>{ clip.recorded_at.toString().slice(0, 10) } / { Math.ceil(clip.duration / 60) } min</time>
                     <audio className="w-full my-6" controls _autoPlay={true}>
                         <source src={ clip.urls.high_mp3 } type="audio/mpeg" />
                     </audio>
