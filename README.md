@@ -8,8 +8,11 @@ Para los estilos usé de base [TailwindCSS](https://tailwindcss.com/)
 
 Los estilos visuales están basados en un diseño de [Dribbble](https://dribbble.com/shots/3744179-Music-Podcast-Mobile-p-1)
 
-![Screenshot de la App](./.assets-readme/screenshot-iphone-6.png)
-![Screenshot de la App](./.assets-readme/screenshot-ipad.png)
+<img src="./.assets-readme/screenshot-iphone-home.png" alt="Screenshot de la Home" width="300">
+
+<img src="./.assets-readme/screenshot-iphone-podcast.png" alt="Screenshot de Podcast" width="300">
+
+<img src="./.assets-readme/screenshot-iphone-player.png" alt="Screenshot de Player" width="300">
 
 ## Pasos para iniciar el proyecto
 
