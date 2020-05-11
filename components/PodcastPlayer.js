@@ -50,6 +50,18 @@ export default class PodcasPlayer extends React.Component {
                             max-height: 500px;
                         }
                     }
+
+                    @media screen and (min-width: 1280px) {
+                        .hero-player-container {
+                            max-height: 75%;
+                        }
+                    }
+
+                    @media screen and (min-width: 1920px) {
+                        .hero-player-container {
+                            max-height: 100%;
+                        }
+                    }
                 `}</style>
 
 
