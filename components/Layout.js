@@ -26,7 +26,7 @@ export default class Layout extends React.Component {
                 <title>{ title }</title>
             </Head>
 
-            <header className="p-3 md:p-5 bg-color-main mb-3 sticky top-0">
+            <header className="p-3 md:p-5 bg-color-main mb-3 sticky top-0 z-50">
                 <h2 className="inline-block py-2 px-4 text-xl md:text-3xl font-bold bg-white text-color-main"> <Link href="/" ><a>Podcasts</a></Link></h2>
             </header>
 
