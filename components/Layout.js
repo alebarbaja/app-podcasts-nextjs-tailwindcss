@@ -20,7 +20,6 @@ export default class Layout extends React.Component {
 
             <Head>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
                 <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet"></link>
                 <link href="https://unpkg.com/nprogress@0.2.0/nprogress.css" rel="stylesheet" />
                 <title>{ title }</title>
