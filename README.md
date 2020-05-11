@@ -18,9 +18,9 @@ La visual está basada en un diseño en [Dribbble](https://dribbble.com/shots/37
 
 ## PageSpeed
 
-<img src="./.assets-readme/screenshot-pagespeed-mobile.png" alt="Estadísticas de PageSpeed para mobile. Resultado: 94%" width="300">
+<img src="./.assets-readme/screenshot-pagespeed-mobile.png" alt="Estadísticas de PageSpeed para mobile. Resultado: 94%">
 
-<img src="./.assets-readme/screenshot-pagespeed-desktop.png" alt="Estadísticas de PageSpeed para desktop. Resultado: 99%" width="300">
+<img src="./.assets-readme/screenshot-pagespeed-desktop.png" alt="Estadísticas de PageSpeed para desktop. Resultado: 99%">
 
 ## Pasos para iniciar el proyecto
 
