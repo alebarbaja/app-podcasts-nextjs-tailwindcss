@@ -8,9 +8,9 @@ Para los estilos usé de base [TailwindCSS](https://tailwindcss.com/)
 
 Los estilos visuales están basados en un diseño de [Dribbble](https://dribbble.com/shots/3744179-Music-Podcast-Mobile-p-1)
 
-<img src="./.assets-readme/screenshot-iphone-home.png" alt="Screenshot de la Home" width="300" style="float: left; margin-right: 10px;">
+<img src="./.assets-readme/screenshot-iphone-home.png" alt="Screenshot de la Home" width="300">
 
-<img src="./.assets-readme/screenshot-iphone-podcast.png" alt="Screenshot de Podcast" width="300" style="float: left; margin-right: 10px;">
+<img src="./.assets-readme/screenshot-iphone-podcast.png" alt="Screenshot de Podcast" width="300">
 
 <img src="./.assets-readme/screenshot-iphone-player.png" alt="Screenshot de Player" width="300">
 
