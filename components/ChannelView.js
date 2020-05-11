@@ -12,30 +12,30 @@ export default class ChannelView extends React.Component {
 
             <section className="mt-12" aria-label="Episode list">
                 {/* <h2 className="text-lg my-2 italic border-b-2 border-current">Last episodes</h2> */}
+                <ul className="grid gap-2 lg:grid-cols-2 xl:grid-cols-4">
                 {
                     audioClip.map( (clip) => (
-                        <ul>
-                            <li className="my-2 episode border-2 border-transparent p-1 transition-colors duration-100 ease-in hover:border-current">
-                                {/* <Link href={`/episode?id=${clip.id}`}> */}
-                                <Link route='episode' params={{
-                                    slug: slug(clip.title),
-                                    id: clip.id
-                                }}>
-                                    <a className="flex items-center"
-                                       onClick={ (event) => onClickEpisode(event, clip) }>
-                                        <picture className="mr-4 flex-shrink-0">
-                                            <img className="object-cover h-full w-full" src={clip.urls.image} alt="" />
-                                        </picture>
-                                        <div>
-                                            <time className="text-color-main opacity-50 font-bold" datetime={ clip.recorded_at.toString().slice(0, 10) }>{ clip.recorded_at.toString().slice(0, 10) } / { Math.ceil(clip.duration / 60) } min</time>
-                                            <h2 className="title text-xl mt-1 text-color-main font-bold">{  clip.title }</h2>
-                                        </div>
-                                    </a>
-                                </Link>
-                            </li>
-                        </ul>
+                        <li className="my-2 episode border-2 border-transparent p-1 transition-colors duration-100 ease-in hover:border-current">
+                            {/* <Link href={`/episode?id=${clip.id}`}> */}
+                            <Link route='episode' params={{
+                                slug: slug(clip.title),
+                                id: clip.id
+                            }}>
+                                <a className="flex items-center"
+                                    onClick={ (event) => onClickEpisode(event, clip) }>
+                                    <picture className="mr-4 flex-shrink-0">
+                                        <img className="object-cover h-full w-full" src={clip.urls.image} alt="" />
+                                    </picture>
+                                    <div>
+                                        <time className="text-color-main opacity-50 font-bold" datetime={ clip.recorded_at.toString().slice(0, 10) }>{ clip.recorded_at.toString().slice(0, 10) } / { Math.ceil(clip.duration / 60) } min</time>
+                                        <h2 className="title text-xl mt-1 text-color-main font-bold">{  clip.title }</h2>
+                                    </div>
+                                </a>
+                            </Link>
+                        </li>
                     ) )
                 }
+                </ul>
             </section>
 
             <style jsx>{`
