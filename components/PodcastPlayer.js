@@ -12,11 +12,11 @@ export default class PodcasPlayer extends React.Component {
                         {
                             onClose ?
                                 <Link href="">
-                                    <a onClick={ onClose }>✕ Close </a>
+                                    <a  className="p-2" onClick={ onClose }>✕ Close </a>
                                 </Link>
                             :
                                 <Link href={`/channel?id=${clip.channel.id}`}>
-                                    <a>✕ Close</a>
+                                    <a className="p-2">✕ Close</a>
                                 </Link>
                         }
                     </nav>
