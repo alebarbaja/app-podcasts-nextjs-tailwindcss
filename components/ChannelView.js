@@ -10,7 +10,7 @@ export default class ChannelView extends React.Component {
             <h2 className="text-4xl text-center text-color-main font-bold border-b-2 border-current mt-4">{ channel.title }</h2>
             <p className="block text-lg text-center mt-1 mb-3 py-1 px-2"><span>{ channel.category.title }</span></p>
 
-            { audioClip.length > 0 ? "" : <p className="text-xl text-color-main md:text-2xl text-center font-bold mt-32">🥺 <br /> Oops! Parece que no hay episodios en este podcast!</p> }
+            { audioClip.length > 0 ? "" : <p className="text-xl text-color-main md:text-2xl text-center font-bold mt-32">🥺 <br /> Oops! it seems that there is no episodes!</p> }
 
             <section className="mt-12" aria-label="Episode list">
                 <ul className="grid gap-2 lg:grid-cols-2 xl:grid-cols-4">
