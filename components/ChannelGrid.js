@@ -17,7 +17,7 @@ export default class ChannelGrid extends React.Component {
                          }} >
                             <a className="flex flex-col items-center justify-between">
                                 <img className="shadow-md" src={channel.urls.logo_image.original} alt="" />
-                                <h2 className="inline-block text-xl mt-4 h-20 text-color-main font-bold">{channel.title}</h2>
+                                <h2 className="inline-block text-xl mt-4 text-color-main font-bold">{channel.title}</h2>
                             </a>
                         </Link>
                     </li>
