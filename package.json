@@ -15,7 +15,7 @@
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^2.2.0",
     "isomorphic-fetch": "^2.2.1",
-    "next": "^9.3.6",
+    "next": "^13.0.2",
     "next-routes": "^1.4.2",
     "nprogress": "^0.2.0",
     "postcss-import": "^12.0.1",
